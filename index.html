@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estadística Inferencial</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+      color:white;
+      font-family:'Segoe UI',sans-serif;
+      padding:40px;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:25px;
+      padding:40px;
+      box-shadow:0 0 30px rgba(0,0,0,0.5);
+    }
+
+    h1{
+      text-align:center;
+      font-size:3rem;
+      margin-bottom:40px;
+      color:#38bdf8;
+      text-shadow:0 0 15px rgba(56,189,248,0.5);
+    }
+
+    h2{
+      margin-top:50px;
+      margin-bottom:20px;
+      color:#7dd3fc;
+      font-size:2rem;
+      border-left:6px solid #38bdf8;
+      padding-left:15px;
+    }
+
+    .section{
+      background:rgba(255,255,255,0.05);
+      border-radius:20px;
+      padding:25px;
+      margin-top:20px;
+      box-shadow:0 0 15px rgba(0,0,0,0.3);
+      transition:0.3s;
+    }
+
+    .section:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 25px rgba(56,189,248,0.3);
+    }
+
+    .formula{
+      background:#111827;
+      border-left:5px solid #38bdf8;
+      padding:15px;
+      margin-top:15px;
+      border-radius:10px;
+      font-family:monospace;
+      font-size:1rem;
+      overflow-x:auto;
+    }
+
+    .result{
+      margin-top:20px;
+      background:linear-gradient(135deg,#14532d,#166534);
+      padding:20px;
+      border-radius:15px;
+      font-weight:bold;
+      box-shadow:0 0 15px rgba(34,197,94,0.3);
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:25px;
+      overflow:hidden;
+      border-radius:15px;
+    }
+
+    th{
+      background:#0284c7;
+      color:white;
+      padding:15px;
+      font-size:1rem;
+    }
+
+    td{
+      padding:12px;
+      text-align:center;
+      background:#1e293b;
+      border:1px solid rgba(255,255,255,0.1);
+      transition:0.2s;
+    }
+
+    tr:hover td{
+      background:#334155;
+    }
+
+    .subtitle{
+      margin-top:10px;
+      color:#cbd5e1;
+      font-size:1.05rem;
+      line-height:1.7;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:50px;
+      color:#94a3b8;
+      font-size:0.9rem;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<div class="container">
+
+  <h1>📊 Estadística Inferencial</h1>
+
+  <p class="subtitle">
+    Resolución de ejercicios de hipótesis e intervalos de confianza utilizando distribución t-student y distribución normal.
+  </p>
+
+  <h2>2) Prueba de Hipótesis</h2>
+
+  <div class="section">
+
+    <p><strong>Datos:</strong></p>
+
+    <div class="formula">
+      μ₀ = 850 ms
+    </div>
+
+    <div class="formula">
+      n = 18
+    </div>
+
+    <div class="formula">
+      x̄ = 812 ms
+    </div>
+
+    <div class="formula">
+      s = 74 ms
+    </div>
+
+    <div class="formula">
+      α = 0.05
+    </div>
+
+    <div class="formula">
+      H₀: μ = 850
+    </div>
+
+    <div class="formula">
+      H₁: μ < 850
+    </div>
+
+    <div class="formula">
+      t = (812 - 850) / (74 / √18)
+    </div>
+
+    <div class="formula">
+      t = -2.18
+    </div>
+
+    <div class="formula">
+      t crítico = -1.740
+    </div>
+
+    <div class="result">
+      ✅ Se rechaza H₀.<br><br>
+      Existe evidencia suficiente para concluir que la pastilla reduce significativamente el tiempo de reacción.
+    </div>
+
+  </div>
+
+  <h2>3) Intervalo de Confianza</h2>
+
+  <div class="section">
+
+    <div class="formula">
+      p̂ = 312 / 400 = 0.78
+    </div>
+
+    <div class="formula">
+      Error estándar = 0.0207
+    </div>
+
+    <div class="formula">
+      E = 1.96 × 0.0207 = 0.0406
+    </div>
+
+    <div class="formula">
+      IC = (0.7394 , 0.8206)
+    </div>
+
+    <div class="result">
+      ✅ Con un 95% de confianza, la verdadera proporción poblacional de clientes cumplidos está entre 73.94% y 82.06%.
+    </div>
+
+  </div>
+
+  <h2>Tabla Z</h2>
+
+  <table>
+
+    <tr>
+      <th>Z</th>
+      <th>0.00</th>
+      <th>0.01</th>
+      <th>0.02</th>
+      <th>0.03</th>
+      <th>0.04</th>
+      <th>0.05</th>
+      <th>0.06</th>
+      <th>0.07</th>
+      <th>0.08</th>
+      <th>0.09</th>
+    </tr>
+
+    <tr>
+      <td>1.5</td>
+      <td>0.9332</td>
+      <td>0.9345</td>
+      <td>0.9357</td>
+      <td>0.9369</td>
+      <td>0.9382</td>
+      <td>0.9394</td>
+      <td>0.9406</td>
+      <td>0.9418</td>
+      <td>0.9430</td>
+      <td>0.9441</td>
+    </tr>
+
+    <tr>
+      <td>1.6</td>
+      <td>0.9452</td>
+      <td>0.9463</td>
+      <td>0.9474</td>
+      <td>0.9484</td>
+      <td>0.9495</td>
+      <td>0.9505</td>
+      <td>0.9515</td>
+      <td>0.9525</td>
+      <td>0.9535</td>
+      <td>0.9545</td>
+    </tr>
+
+    <tr>
+      <td>1.7</td>
+      <td>0.9554</td>
+      <td>0.9564</td>
+      <td>0.9573</td>
+      <td>0.9582</td>
+      <td>0.9591</td>
+      <td>0.9599</td>
+      <td>0.9608</td>
+      <td>0.9616</td>
+      <td>0.9625</td>
+      <td>0.9633</td>
+    </tr>
+
+    <tr>
+      <td>1.8</td>
+      <td>0.9641</td>
+      <td>0.9649</td>
+      <td>0.9656</td>
+      <td>0.9664</td>
+      <td>0.9671</td>
+      <td>0.9678</td>
+      <td>0.9686</td>
+      <td>0.9693</td>
+      <td>0.9699</td>
+      <td>0.9706</td>
+    </tr>
+
+    <tr>
+      <td>1.9</td>
+      <td>0.9713</td>
+      <td>0.9719</td>
+      <td>0.9726</td>
+      <td>0.9732</td>
+      <td>0.9738</td>
+      <td>0.9744</td>
+      <td>0.9750</td>
+      <td>0.9756</td>
+      <td>0.9761</td>
+      <td>0.9767</td>
+    </tr>
+
+  </table>
+
+  <h2>Tabla t-student</h2>
+
+  <table>
+
+    <tr>
+      <th rowspan="2">v = n-1</th>
+      <th colspan="4">Una cola</th>
+      <th colspan="4">Dos colas</th>
+    </tr>
+
+    <tr>
+      <th>α = 0.10</th>
+      <th>α = 0.05</th>
+      <th>α = 0.025</th>
+      <th>α = 0.01</th>
+      <th>α = 0.20</th>
+      <th>α = 0.10</th>
+      <th>α = 0.05</th>
+      <th>α = 0.01</th>
+    </tr>
+
+    <tr>
+      <td>15</td>
+      <td>1.341</td>
+      <td>1.753</td>
+      <td>2.131</td>
+      <td>2.602</td>
+      <td>1.341</td>
+      <td>1.753</td>
+      <td>2.131</td>
+      <td>2.947</td>
+    </tr>
+
+    <tr>
+      <td>16</td>
+      <td>1.337</td>
+      <td>1.746</td>
+      <td>2.120</td>
+      <td>2.583</td>
+      <td>1.337</td>
+      <td>1.746</td>
+      <td>2.120</td>
+      <td>2.921</td>
+    </tr>
+
+    <tr>
+      <td>17</td>
+      <td>1.333</td>
+      <td>1.740</td>
+      <td>2.110</td>
+      <td>2.567</td>
+      <td>1.333</td>
+      <td>1.740</td>
+      <td>2.110</td>
+      <td>2.898</td>
+    </tr>
+
+    <tr>
+      <td>18</td>
+      <td>1.330</td>
+      <td>1.734</td>
+      <td>2.101</td>
+      <td>2.552</td>
+      <td>1.330</td>
+      <td>1.734</td>
+      <td>2.101</td>
+      <td>2.878</td>
+    </tr>
+
+    <tr>
+      <td>19</td>
+      <td>1.328</td>
+      <td>1.729</td>
+      <td>2.093</td>
+      <td>2.539</td>
+      <td>1.328</td>
+      <td>1.729</td>
+      <td>2.093</td>
+      <td>2.861</td>
+    </tr>
+
+  </table>
+
+  <footer>
+    Proyecto de Estadística Inferencial • GitHub Pages
+  </footer>
+
+</div>
+
+</body>
+</html>
